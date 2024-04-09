@@ -10,10 +10,9 @@ export const fetchMovies = async () => {
 
 
     data = await res.json()
-    console.log(data)
 
-    if (data.Response === "False") {
-      throw new Error("Couldn't fetch movies, try again later")
+    if (data.Response === 'False') {
+      throw new Error('Couldn\'t fetch movies, try again later')
     }
 
     return data?.Search.map((movie) => ({
@@ -34,20 +33,19 @@ export const fetchMovieById = async (id) => {
 
 
     data = await res.json()
-    console.log(data)
 
-    if (data.Response === "False") {
-      throw new Error("Couldn't fetch movies, try again later")
+    if (data.Response === 'False') {
+      throw new Error('Couldn\'t fetch movies, try again later')
     }
 
-    return data?.map((movie) => ({
-      id: movie.imdbID,
-      title: movie.Title,
-      plot: movie.Plot,
-      poster: movie.Poster,
-      rating: movie.imdRating,
-      language: movie.Language
-    }))
+    return {
+      id: data.imdbID,
+      title: data.Title,
+      plot: data.Plot,
+      poster: data.Poster,
+      rating: data.imdbRating,
+      language: data.Language
+    }
   } catch (error) {
     console.error(error)
   }

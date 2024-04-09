@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #554f95;
+  --bg: #282828;
+  --secondary: #1c1c1c;
+  --third: #91c870;
+  background-color: var(--bg);
+  color: #ffffff;
+}
+
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px;
+  width: auto;
+  align-items: center;
+  justify-items: center;
+  margin: 50px;
+}
+.movieList img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.buyTicket {
+  background-color: var(--accent);
+  width: 100%;
+  color: #ffffff;
+  padding: 15px 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.navbar {
+  background-color: var(--secondary);
+}
+
+.header h1 {
+  @apply font-bold text-3xl;
+}
+
+.header h2 {
+  @apply font-normal text-xl;
+}
+
+.movieList picture {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: -10;
+}
+
+.Movie h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.buy-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-horizontal li:nth-child(1) {
+  font-weight: 700;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  justify-content: space-between;
+  color: var(--secondary);
+  font-size: 1.5rem;
+  max-width: 40%;
+}
+
+.content div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #ffffff;
+  opacity: 0.4;
+  border: 5px solid var(--accent);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  color: black;
+  font-weight: 500;
+}
+
+.content h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
+
+/* Slides */
+.swiper-button-prev {
+  color: #ffffff;
+}
+
+.swiper-button-next {
+  color: #ffffff;
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  @apply flex justify-center gap-10;
+  color: #ffffff;
+}
+
+.buttons > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.buttons > button img {
+  @apply w-14;
+}
+
+.rating-span {
+  @apply flex flex-col justify-center items-center absolute top-0 left-0 bg-primary text-white p-1 rounded-lg;
+}
+/* buy ticket */
+
+.ticket-section {
+  @apply flex flex-col items-center justify-center;
+}
+
+.ticket-section form {
+  @apply flex flex-col w-1/3 justify-center;
+}
+
+header h3 {
+  @apply text-lg;
+}
+
+.btn-outline {
+  color: var(--accent);
+}
+
+.form-control {
+  position: relative;
+  padding: 10px;
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.form-control label {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background-color: var(--bg);
+  font-weight: 600;
+}
+
+.form-control select,
+input {
+  border: none;
+  background-color: var(--bg);
+  padding: 10px 3px;
+}
+
+.form-control select:focus,
+input:focus {
+  outline: none;
+}
